@@ -6,14 +6,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: k3s-cicd-app
+      app: spring-app
   template:
     metadata:
       labels:
-        app: k3s-cicd-app
+        app: spring-app
     spec:
       containers:
-        - name: k3s-cicd-app
+        - name: spring-app
           image: DOCKER_IMAGE_TAG
           ports:
             - containerPort: 8080
