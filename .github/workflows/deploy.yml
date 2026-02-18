@@ -43,4 +43,4 @@ jobs:
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
           sed -i "s|image: DOCKER_IMAGE_TAG|image: ${{ env.IMAGE_NAME }}:${{ github.sha }}|g" k8s/deployment.yaml
           kubectl apply -f k8s/ --validate=false
-          kubectl rollout restart deployment/k3s-cicd-app
+          kubectl rollout restart deployment/spring-app
